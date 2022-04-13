@@ -10,3 +10,5 @@ echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/source
 sudo apt-get update<br/>
 sudo apt-get -y install jenkins<br/>
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+jenkins ALL=(ALL) NOPASSWD:ALL
