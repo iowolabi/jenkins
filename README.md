@@ -1,7 +1,8 @@
 # jenkins<br/>	  
 <br/>	      
 Jenkins Word file
-sudo apt-get update<br/>	      
+sudo apt-get update<br/>	
+sudo add-apt-repository ppa:openjdk-r/ppa<br/>
 sudo apt install -y openjdk-11-jre-headless<br/>
 wget -qO - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add - <br/>	
 sudo apt-get upgrade<br/>	   
