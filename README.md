@@ -10,4 +10,4 @@ sudo apt-get -y install jenkins<br/>
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword<br/>
 sudo reboot<br/>
 sudo nano /etc/sudoers<br/>
-     jenkins ALL=(ALL) NOPASSWD:ALL
+(add - all members of the group sudo) jenkins ALL=(ALL) NOPASSWD:ALL
