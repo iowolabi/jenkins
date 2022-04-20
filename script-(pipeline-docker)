@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('pre-deployment') {
+            steps {
+                echo 'starting install of docker'
+                sh "sudo apt-get update"
+                sh "sudo apt-get -y install docker.io" 
+                echo 'installation completed'
+            }
+        }
+        stage('deployment') {
+            steps {
+                echo 'starting Docker Server installation'
+                sh "sudo docker run -p 8081:80 -d httpd"  
+            }
+        }
+        stage('post-deployment') {
+            steps {
+                echo 'installation completed' 
+            }
+        }
+    }
+}
