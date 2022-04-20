@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('pre-deployment') {
+            steps {
+                echo 'starting install of Apache2'
+                git url:"https://github.com/iowolabi/personalWebSite.git"
+                sh "sudo apt-get update"
+                sh "sudo apt-get -y install apache2" 
+                echo 'installation completed'
+            }
+        }
+        stage('deployment') {
+            steps {
+                echo 'starting Docker Server installation'
+                sh "sudo cp -r * /var/www/html"  
+            }
+        }
+        stage('post-deployment') {
+            steps {
+                echo 'installation completed' 
+            }
+        }
+    }
+}
